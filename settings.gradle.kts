@@ -20,5 +20,8 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "ToDoList"
+
 include(":app")
- 
+include(":feature-note-api")
+include(":feature-note-impl")
+include(":feature-note-ui")

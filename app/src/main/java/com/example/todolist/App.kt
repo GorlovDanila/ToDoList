@@ -2,6 +2,7 @@ package com.example.todolist
 
 import android.app.Application
 import com.example.feature.note.impl.di.noteImplModule
+import com.example.feature.note.ui.di.noteUiModule
 import com.example.todolist.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -19,6 +20,7 @@ class App : Application() {
             modules(
                 appModule,
                 noteImplModule,
+                noteUiModule,
             )
         }
     }

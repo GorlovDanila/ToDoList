@@ -12,7 +12,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -20,9 +19,19 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+
+    implementation(project(":feature-note-api"))
+
+    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.androidx.lifecycle.viewModel)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.koin)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -20,7 +20,6 @@ class NoteHolder(
     companion object {
         fun create(
             parent: ViewGroup,
-//            actionNext: (WeatherResponse) -> Unit,
         ): NoteHolder = NoteHolder(
             binding = ItemNoteBinding.inflate(
                 LayoutInflater.from(parent.context),

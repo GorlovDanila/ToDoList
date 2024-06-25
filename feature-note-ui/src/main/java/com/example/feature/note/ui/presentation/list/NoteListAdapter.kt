@@ -1,28 +1,15 @@
 package com.example.feature.note.ui.presentation.list
 
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature.note.ui.presentation.model.NoteItem
+import com.example.feature.note.ui.presentation.util.NoteDiffUtil
 import com.example.feature_note_ui.R
 import java.lang.IllegalStateException
 
-class NoteListAdapter(
-//    private val actionAdd: (NoteItem) -> Unit,
-) : ListAdapter<NoteItem, RecyclerView.ViewHolder>(
-    object : DiffUtil.ItemCallback<NoteItem>() {
-        override fun areItemsTheSame(
-            oldItem: NoteItem,
-            newItem: NoteItem,
-        ): Boolean = (oldItem as? NoteItem)?.title == (newItem as? NoteItem)?.title
+class NoteListAdapter : ListAdapter<NoteItem, RecyclerView.ViewHolder>(NoteDiffUtil) {
 
-        override fun areContentsTheSame(
-            oldItem: NoteItem,
-            newItem: NoteItem
-        ): Boolean = oldItem == newItem
-    }
-) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when (viewType) {
             R.layout.item_note -> NoteHolder.create(parent)

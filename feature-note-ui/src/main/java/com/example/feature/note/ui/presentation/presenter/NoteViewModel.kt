@@ -24,7 +24,7 @@ internal class NoteViewModel(
     fun getNotes() {
         viewModelScope.launch {
             _notesList.emit(
-                value = getAllNotesUseCase().map { noteToNoteItemMapper.toPresentation(it) } + NoteItem("ffff", "fffff")
+                value = getAllNotesUseCase().map { noteToNoteItemMapper.toPresentation(it) }
             )
         }
     }

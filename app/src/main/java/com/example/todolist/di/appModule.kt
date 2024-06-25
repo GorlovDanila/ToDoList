@@ -3,7 +3,7 @@ package com.example.todolist.di
 import android.content.Context
 import androidx.room.Room
 import com.example.feature.note.impl.data.db.dao.NoteDao
-import com.example.todolist.util.AppDatabase
+import com.example.todolist.db.AppDatabase
 import org.koin.dsl.module
 
 private const val DATABASE_NAME = "note_db"
